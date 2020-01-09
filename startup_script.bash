@@ -18,7 +18,7 @@ wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_pro
 chmod +x cloud_sql_proxy
 
 #Initialize the Cloud SQL instance
-./cloud_sql_proxy -instances="stone-door-258502:us-west1:instance2"=tcp:3306
+./cloud_sql_proxy -instances="stone-door-258502:us-west1:instance2"=tcp:3306 &
 
 # Get the application source code
 git clone https://github.com/stashconsulting/nodejsdemo.git
