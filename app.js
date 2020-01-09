@@ -15,8 +15,8 @@ main = async () => {
    let query = "SELECT count_view FROM view"
    let query_engine =  util.promisify(connection.query).bind(connection);
    let result = await query_engine(query)
-   if (result[0] == "NULL"){
-     query = "INSERT INTO view (page_view) VALUES (1)"
+   if (!result[0]){
+     query = "INSERT INTO view (count_view) VALUES (1)"
      result = 1
    } else {
      result = result[0]['count_view'] + 1
